@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mock Netflix Login</title>
+<style>
+    body {
+        background-color: #141414;
+        color: white;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    .login-box {
+        background-color: rgba(0,0,0,0.8);
+        padding: 20px;
+        border-radius: 5px;
+        width: 300px;
+        text-align: center;
+    }
+    input {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+    }
+    button {
+        width: 95%;
+        padding: 10px;
+        background-color: red;
+        border: none;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: darkred;
+    }
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="login-box" id="step1">
+    <h2>Sign In</h2>
+    <input type="text" id="userInput" placeholder="Email or Phone Number">
+    <button onclick="sendOTP()">Use a sign-in code</button>
+</div>
+
+<div class="login-box hidden" id="step2">
+    <h2>Enter OTP</h2>
+    <p id="otpMsg"></p>
+    <input type="text" id="otpInput" placeholder="Enter OTP">
+    <button onclick="verifyOTP()">Submit</button>
+</div>
+
+<script>
+    let generatedOTP = "";
+
+    function sendOTP() {
+        const user = document.getElementById("userInput").value.trim();
+        if (user === "") {
+            alert("Please enter Email or Phone Number");
+            return;
+        }
+        generatedOTP = Math.floor(100000 + Math.random() * 900000).toString();
+        document.getElementById("otpMsg").innerText = "Your OTP is: " + generatedOTP;
+        document.getElementById("step1").classList.add("hidden");
+        document.getElementById("step2").classList.remove("hidden");
+    }
+
+    function verifyOTP() {
+        const entered = document.getElementById("otpInput").value.trim();
+        if (entered === generatedOTP) {
+            alert("Login successful!");
+        } else {
+            alert("Invalid OTP. Try again.");
+        }
+    }
+</script>
+
+</body>
+</html>

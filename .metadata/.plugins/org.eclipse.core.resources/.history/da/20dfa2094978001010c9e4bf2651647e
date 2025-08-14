@@ -1,0 +1,10 @@
+package com.testng;
+
+public class TestngExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

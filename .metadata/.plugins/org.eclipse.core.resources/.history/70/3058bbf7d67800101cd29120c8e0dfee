@@ -1,0 +1,14 @@
+package com.mvn;
+
+import java.util.ResourceBundle;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		public int userLogin() {	
+			ResourceBundle resource = ResourceBundle.getBundle("config");
+		}
+	}
+
+}

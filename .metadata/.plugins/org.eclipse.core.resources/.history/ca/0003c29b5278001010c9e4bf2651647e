@@ -1,0 +1,10 @@
+package com.testng;
+
+public class TestStudent {
+	StudentGrade sgrade = new StudentGrade();
+	Student student = new Student();
+	
+	public void testStudentGrade() {
+		
+	}
+}

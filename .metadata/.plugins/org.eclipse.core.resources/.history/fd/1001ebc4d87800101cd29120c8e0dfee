@@ -1,0 +1,19 @@
+package com.mvn;
+
+import java.util.ResourceBundle;
+
+public class App {
+
+	public int userLogin(String inUN, String inPwd) {	
+		ResourceBundle resource = ResourceBundle.getBundle("config");
+		String username = resource.getString("username");
+		String password = resource.getString("password");
+		if(inUN.equals(username) && inPwd.equals("password")) {
+			return 1;
+		}
+		else {
+			return 0;
+		}
+	}
+
+}

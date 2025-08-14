@@ -1,0 +1,21 @@
+package com.testng;
+
+public class StudentGrade {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		public char calculateGrade(Student student) {
+			char grade = "";
+			if (student.getTotalMarks()>90) {
+				grade = 'A';
+			}
+			else if(student.getTotalMarks()>75 && student.getTotalMarks()<=90) {
+				grade = 'B'
+			}
+			else if(student.getTotalMarks()>60 && student.getTotalMarks()<=75) {
+				grade = 'C'
+			}
+		}
+	}
+
+}

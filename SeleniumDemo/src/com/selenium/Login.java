@@ -1,0 +1,46 @@
+package com.selenium;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class Login {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+
+		//Launching Netflix login page
+		driver.get("E:\\Eclipse\\TestPrac\\Login.html");
+		WebDriverWait wt = new WebDriverWait(driver, Duration.ofSeconds(10)); 
+
+		//WebElement signIn = wt.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@data-uia='use-code-button']")));
+		WebElement sendOtp = driver.findElement(By.id("userInput"));
+		sendOtp.sendKeys("8328036873");
+		Thread.sleep(2000);
+		
+		driver.findElement(By.xpath("//button[contains(text(),'Use a sign-in code')]")).click();
+		Thread.sleep(2000);
+		
+		WebElement ele = driver.findElement(By.id("otpMsg"));
+		String text = ele.getText();
+		String Otp = text.substring(text.indexOf(":")+2);
+		
+		driver.findElement(By.id("otpInput")).sendKeys(Otp);
+		Thread.sleep(2000);
+
+		driver.findElement(By.xpath("//button[contains(text(),'Submit')]")).click();
+		String log = driver.switchTo().alert().getText();
+		Thread.sleep(1000);
+		driver.switchTo().alert().accept();
+		System.out.println(log);
+	}
+
+}
+

@@ -1,0 +1,11 @@
+package com.mvn;
+
+public class AppTest {
+	public void test1() {
+		
+	}
+	
+	public void test2(){
+		
+	}
+}

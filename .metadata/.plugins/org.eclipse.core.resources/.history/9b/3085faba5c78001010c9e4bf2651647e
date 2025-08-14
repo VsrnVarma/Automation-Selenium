@@ -1,0 +1,26 @@
+package com.testng.demo;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+
+public class TestngSample {
+	public WebDriver driver;
+	
+	@BeforeSuite
+	public void setUpDriver() {
+	    System.out.println("Setting ");
+	}
+	@BeforeTest
+	public void setUpEnvironment() {
+	    System.out.println("Launching browser and navigating to base URL...");
+		System.setProperty("webdriver.chrome.driver", "E:\\Selenium\\chromedriver-win64\\chromedriver.exe");
+		driver = new ChromeDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    driver.manage().window().maximize();
+	    driver.get("https://www.saucedemo.com/");
+	}
+
+}
