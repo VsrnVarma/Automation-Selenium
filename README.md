@@ -13,5 +13,4 @@ In 'com.testng.demo' worked on the testng framework along with selenium where I 
 
 3. MavenDemo: A Maven project where I worked on the maven proejct workflow and how to use selenium in it
 
-   I Performed a simple login testing initially without selenium through 'App.java' and 'AppTest.java' where I tested a positive and negative scenario by giving different credentials. Then I performed a test on a method in 'TS_Login.java' which contains selenium where I logged into a test website and compare the title to the expected title.\
-Used Maven Surefire plugin in order to test all the test methods present in the project.
+   I Performed a simple login testing initially without selenium through 'App.java' and 'AppTest.java' where I tested a positive and negative scenario by giving different credentials. Then I performed a test on a method in 'TS_Login.java' which contains selenium where I logged into a test website and compare the title to the expected title. Used Maven Surefire plugin in order to test all the test methods present in the project.
